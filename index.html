@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head>
+	 <meta charset="utf-8"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
+	<script src="app.js"></script>
+  </head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
+  <body ng-controller="HomeController">
+	<div class="container">
+	<div class="jumbotron">
+		<h1>NBA Year-To-Year Salary Comparison</h1>
+		<p>Compare salaries from 1985 to 2017 as a percentage of the salary cap. </p>
+		<p>Hopefully, this will help people understand salaries in the context of the salary cap, rather than in absolute dollar figures.</p>
+	</div>
+
+		<form>
+		<fieldset class="form-group">
+			<label for="Salary">Salary</label>
+			<input type="number" class="form-control" id="salaryInput" value="3000000">
+		</fieldset>
+		<fieldset class="form-group">
+			<label for="yearOfSalary">Year of Salary</label>
+			<input type="text" class="form-control" id="yearOfSalaryInput" value="2005">
+		</fieldset>
+		<fieldset class="form-group">
+			<label for="yearOfSalaryForComparison">Year of Salary For Comparison</label>
+			<input type="text" class="form-control" id="yearOfSalaryForComparisonInput" value="2016">
+		</fieldset>
+		<button type="button" id="button" ng-click="getNewSalaryOutput()" class="btn btn-primary btn-lg">See Comparison</button>
+		
+		<h2 id="adjustedSalaryOutputLabel">Adjusted Salary:</h2>
+		<h2 id="adjustedSalaryOutput">  </div>
+		</form>
+		<canvas  style="display: inline-block;" id="salaryComparisonChart" width="400" height="400"></canvas>
+		<canvas  style="display: inline-block;" id="capChart" width="800" height="400"></canvas>
+		
+		
+		
+		<div class="container">
+		<div class="well"> Cap Data Taken From http://basketball.realgm.com/nba/info/salary_cap </div>
+		<div class="well"> Charts Made Using http://www.chartjs.org/ </div>
+		</div>
+
+		
+	</div>
+    <script src="app.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.js"></script>
+  </body>
+</html>

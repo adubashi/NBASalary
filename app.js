@@ -54,13 +54,13 @@ app.controller('HomeController', function($scope) {
   
   $scope.createCapTable = function() {
 		//2nd Chart
-		keys = Object.keys($scope.salaryCap).reverse();
+		keys = Object.keys($scope.salaryCap);
 		capData = [];
 		//Keys
 		for(var itr in $scope.salaryCap) {
 			capData.push($scope.salaryCap[itr])
 		}
-		capData = capData.reverse();
+		//capData = capData.reverse();
 		console.log(capData);
 		
 		var dataForCapChart = {
